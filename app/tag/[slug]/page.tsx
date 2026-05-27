@@ -31,6 +31,7 @@ export default async function TagDetailPage({
   }
 
   const files = await res.json();
+  console.log("Fetched files for tag", slug, files);
 
   return (
     <div className="container mx-auto py-8">
@@ -45,7 +46,24 @@ export default async function TagDetailPage({
               src={`/api/images?query=${file.filePath.slice(1)}/tr:w-400,h-400`}
               alt={file.name}
             />
-            <figcaption className="text-center mt-2">{file.name}</figcaption>
+            <figcaption className="text-center mt-2">
+              <div>{file.name}</div>
+              {file.embeddedMetadata?.Model && (
+                <div className="text-sm text-gray-500">
+                  {file.embeddedMetadata?.Model}
+                </div>
+              )}
+              {file.embeddedMetadata?.ISO && (
+                <div className="text-sm text-gray-500">
+                  ISO {file.embeddedMetadata?.ISO}
+                </div>
+              )}
+              {file.embeddedMetadata?.FNumber && (
+                <div className="text-sm text-gray-500">
+                  f/{file.embeddedMetadata?.FNumber}
+                </div>
+              )}
+            </figcaption>
           </figure>
         ))}
       </div>
