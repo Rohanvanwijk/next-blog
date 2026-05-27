@@ -1,6 +1,7 @@
 import crypto from "crypto";
+import { NextRequest } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const IMAGEKIT_URL_ENDPOINT = process.env.IMAGEKIT_URL_ENDPOINT;
   const IMAGEKIT_KEY = process.env.IMAGEKIT_KEY;
 
