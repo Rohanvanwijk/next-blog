@@ -31,7 +31,6 @@ export default async function TagDetailPage({
   }
 
   const files = await res.json();
-  console.log("Fetched files for tag", slug, files);
 
   return (
     <div className="container mx-auto py-8">
@@ -42,10 +41,15 @@ export default async function TagDetailPage({
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {files.map((file: any) => (
           <figure key={file.fileId}>
-            <img
-              src={`/api/images?query=${file.filePath.slice(1)}/tr:w-400,h-400`}
-              alt={file.name}
-            />
+            <Link
+              href={`/photo/${encodeURIComponent(file.filePath.slice(1))}?id=${file.fileId}`}
+            >
+              <img
+                src={`/api/images?query=${file.filePath.slice(1)}/tr:w-400,h-400`}
+                alt={file.name}
+                className="w-full h-auto object-cover rounded-md"
+              />
+            </Link>
             <figcaption className="text-center mt-2">
               <div>{file.name}</div>
               {file.embeddedMetadata?.Model && (
