@@ -69,7 +69,7 @@ export default async function DetailPhotoPage({
       <img
         src={`/api/images?query=${decodedSlug}`}
         alt={decodedSlug}
-        className="w-auto h-full object-cover rounded-md"
+        className="w-auto h-[90%] object-cover rounded-md"
       />
     </div>
   );

@@ -1,6 +1,7 @@
+import MyBooks from "@/components/MyBooks";
 import Link from "next/dist/client/link";
 
-const TAGS = ["Nature", "Automotive", "Travel"];
+const TAGS = ["Nature", "Automotive", "Travel", "Vibe", "Architecture"];
 
 export default async function Home() {
   const IMAGEKIT_API_ENDPOINT = process.env.IMAGEKIT_API_ENDPOINT;
@@ -32,7 +33,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center">
-      <header className="flex items-center justify-center pt-16">
+      <header className="flex items-center justify-center pt-16 gap-4">
         <h1 className="text-4xl font-bold mb-4">Rohan Photo</h1>
       </header>
       <main className="flex flex-1 w-full max-w-7xl flex-col items-center justify-start py-16 px-8 bg-white dark:bg-black sm:items-start">
@@ -44,7 +45,7 @@ export default async function Home() {
                 alt={theme[0].name}
                 className="object-cover rounded-md mb-2 bg-blue-100 dark:bg-blue-900 w-full"
                 width={400}
-                height={500}
+                height={400}
               />
               <Link
                 href={`/tag/${theme[0].tags[0]}`}
