@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "Rohan Photo",
   description:
     "I am a software engineer and photographer. This is my personal photo gallery built with Next.js and ImageKit.",
+  openGraph: {
+    images: [
+      "/api/images?query=cities-netherlands/haarlem-windmolen-aan-het-water.jpg/tr:w-1200,h-600",
+    ],
+  },
 };
 
 export default function RootLayout({
