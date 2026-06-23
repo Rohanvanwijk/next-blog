@@ -1,5 +1,5 @@
-import MyBooks from "@/components/MyBooks";
 import Link from "next/dist/client/link";
+import LoginView from "./view/LoginView";
 
 const TAGS = ["Nature", "Automotive", "Travel", "Vibe", "Architecture"];
 
@@ -33,8 +33,9 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center">
-      <header className="flex items-center justify-center pt-16 gap-4">
-        <h1 className="text-4xl font-bold mb-4">Rohan Photo</h1>
+      <header className="flex items-center justify-between pt-16 gap-4 w-full px-8 max-w-7xl">
+        <h1 className="text-4xl font-bold">Rohan Photo</h1>
+        <LoginView></LoginView>
       </header>
       <main className="flex flex-1 w-full max-w-7xl flex-col items-center justify-start py-16 px-8 bg-white dark:bg-black sm:items-start">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
